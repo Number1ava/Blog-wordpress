@@ -13,6 +13,15 @@ html {
   padding: 0;
   box-sizing: inherit;
 }
+body {
+  overflow-anchor: none;
+  font-family: "Futura PT", sans-serif;
+  font-weight: 400;
+  background-color: #f9f9f9;
+}
+img {
+  max-width: 100%;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -32,5 +41,90 @@ h6 {
   margin: 0;
   font-size: inherit;
 }
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
+.container {
+  max-width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* === header === */
+.header {
+  padding: 6px 4px 0px 0px;
+  background-color: #fff;
+  &__nav {
+    margin-right: 40px;
+  }
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item:not(:last-child) {
+    margin-right: 40px;
+  }
+  &__link {
+    position: relative;
+    font-size: 18px;
+    color: #2f2222;
+    &--current {
+      color: #5d71dd;
+    }
+    &--current::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #5d71dd;
+    }
+  }
+}
+
+.phone {
+  font-size: 18px;
+  font-weight: 500;
+  color: #5d71dd;
+  background-image: url("../images/phone.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.banner {
+  height: 300px;
+  background-image: url("../images/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 @import "media";
